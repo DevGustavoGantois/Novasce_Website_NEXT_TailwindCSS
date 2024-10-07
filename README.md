@@ -1,4 +1,4 @@
-<a href="">Clique aqui para ter acesso ao deploy</a>
+<a href="https://novasce-website-next-tailwind-css.vercel.app/">Clique aqui para ter acesso ao deploy</a>
 
 <h1>Novasce Website</h1>
 
@@ -21,7 +21,7 @@
 
 <h1>ING</h1>
 
-<a href="">Click here to access the deploy</a>
+<a href="https://novasce-website-next-tailwind-css.vercel.app/">Click here to access the deploy</a>
 
 <h1>Novasce Website</h1>
 
