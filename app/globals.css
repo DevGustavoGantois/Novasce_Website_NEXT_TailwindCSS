@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #102032;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00666c;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+@layer base {
+  
+  .green-gradient {
+    background: linear-gradient(to right, #003833 0%, #102032 100%);
+  }
+
+  .h1 {
+    @apply text-[40px] leading-[40px] lg:text-[60px] lg:leading-[62px] font-bold; /* Added semicolon */
+  }
+
+  .h2 {
+    @apply text-[32px] leading-[40px] lg:text-[50px] lg:leading-[50px] font-bold; /* Added semicolon */
+  }
+
+  .h3 {
+    @apply text-[38px] leading-[46px] font-bold; /* Added semicolon */
+  }
+
+  .h4 {
+    @apply text-[30px] leading-[46px] font-bold; /* Added semicolon */
+  }
+
+  .h5 {
+    @apply text-[24px] leading-[32px] font-bold; /* Added semicolon */
+  }
+
+  .h6 {
+    @apply text-[18px] leading-[28px] font-bold; /* Added semicolon */
+  }
+
+  .neon-border {
+    @apply relative rounded-2xl p-[60px] py-[70px] lg:p-24 border border-transparent;
+    position: relative;
+    z-index: 1;
+  }
+
+  .neon-border::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl;
+    padding: 2px; /* ajuste o valor para aumentar ou diminuir a espessura da borda */
+    background: linear-gradient(90deg, #00666C, #102032, #00666C, #102032); /* gradiente neon */
+    background-size: 200% 200%;
+    animation: neon-border-running 3s linear infinite; /* animação da borda */
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+}
+
+@keyframes neon-border-running {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.sonar-circle {
+  position: absolute;
+  border: 1px solid rgba(0, 198, 171, 0.8); /* Cor da borda do círculo */
+  border-radius: 50%; /* Fazendo com que o elemento seja um círculo */
+  animation: pulse 1.5s infinite; /* Aplicando a animação */
+  opacity: 0; /* Começando com opacidade 0 */
+}
+
+.sonar-circle:nth-child(1) {
+  width: 450px; /* Tamanho do primeiro círculo */
+  height: 450px;
+  animation-delay: 0.1s; /* Sem atraso */
+}
+
+.sonar-circle:nth-child(2) {
+  width: 850px; /* Tamanho do segundo círculo */
+  height: 850px;
+  animation-delay: 0.1s; /* Atraso do segundo círculo */
+}
+
+.sonar-circle:nth-child(3) {
+  width: 1250px; /* Tamanho do terceiro círculo */
+  height: 1250px;
+  animation-delay: 0.2s; /* Atraso do terceiro círculo */
+}
+
+.sonar-circle:nth-child(4) {
+  width: 1650px; /* Tamanho do terceiro círculo */
+  height: 1650px;
+  animation-delay: 0.2s; /* Atraso do terceiro círculo */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0; /* Começando e terminando com opacidade 0 */
+  }
+  50% {
+    opacity: 1; /* A opacidade atinge 1 no meio da animação */
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0);
+  }
+  50% {
+    transform: translatey(-10px); 
+  }
+  100% {
+    transform: translatey(0);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite; 
+}
