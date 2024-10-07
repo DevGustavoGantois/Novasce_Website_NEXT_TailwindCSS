@@ -59,8 +59,8 @@ export function FAQSection() {
                 </div>
             </div>
             <div className="mt-16 lg:mt-0 mb-24">
-                <Image src='/imgFAQ.png' alt="FAQ Image" className="object-contain" width={1820} height={1820} />
+                <Image src='/imgFAQ.png' alt="FAQ Image" className="object-cover w-full h-auto max-w-xl" width={100}  height={100} layout="responsive"  />
             </div>
-        </section>
+        </section> 
     );
 }
