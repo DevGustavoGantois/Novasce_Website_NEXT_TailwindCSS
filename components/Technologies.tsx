@@ -6,10 +6,10 @@ export function Technologies() {
             <p className="text-white/50">Tecnologias que empregamos para proporcionar uma experiência otimizada ao usuário.</p>
             <div className="mt-12 mb-12 grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-8 justify-items-center">
             <div className="w-24 h-24 relative" data-aos="fade-down">
-                <Image src='/reactJS.png' alt="React JS" sizes="(max-width: 768px) 100vw, 50vw" fill className="object-contain" />
+                <Image src='/ReactJS.png' alt="React JS" sizes="(max-width: 768px) 100vw, 50vw" fill className="object-contain" />
             </div>
             <div className="w-24 h-24 relative" data-aos="fade-up">
-                <Image src='/Typescript.png' alt="TypeScript" fill className="object-contain" />
+                <Image src='/TypeScript.png' alt="TypeScript" fill className="object-contain" />
             </div>
             <div className="w-24 h-24 relative" data-aos="fade-down">
                 <Image src='/Flutter.png' alt="Flutter" fill className="object-contain" />
