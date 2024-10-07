@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Image from "next/image";
 import { useState } from "react";
@@ -20,6 +20,12 @@ const FaqData = [
 ];
 
 export function FAQSection() {
+    const [openIndex, setOpenIndex] = useState<number | null>(null); 
+
+    const toggleAnswer = (index: number) => {
+        setOpenIndex(prevIndex => (prevIndex === index ? null : index)); 
+    };
+
     return (
         <section className="mb-40 flex flex-col justify-center lg:justify-around items-center lg:flex-row">
             <div className="text-center lg:text-start">
@@ -27,17 +33,13 @@ export function FAQSection() {
                 <p className="mt-8 text-white">Encontre aqui as respostas para as dúvidas mais comuns sobre nossos serviços e soluções. Se não encontrar o que procura, entre em contato com nossa equipe!</p>
                 <div className="mt-6">
                     {FaqData.map((item, index) => {
-                        const [isOpen, setIsOpen] = useState(false);
-
-                        const toggleAnswer = () => {
-                            setIsOpen((prev) => !prev);
-                        };
+                        const isOpen = openIndex === index; // Check if the current index is open
 
                         return (
                             <div key={index} className="mb-2 flex flex-col gap-0">
                                 <div 
                                     className="cursor-pointer text-white" 
-                                    onClick={toggleAnswer} 
+                                    onClick={() => toggleAnswer(index)} // Pass the index to the toggle function
                                 >
                                     <div className="flex items-center justify-between bg-gradient-to-r from-black to-[#102032] p-6 rounded-full transition-all">
                                         <span className="text-white font-medium">{item.question}</span>
